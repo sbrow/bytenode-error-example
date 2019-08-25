@@ -1,0 +1,22 @@
+{
+  "name": "bytenode-error-example",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack",
+    "compile": "electron ./bin/compile.js",
+    "start": "electron ./app/electron.js"
+  },
+  "dependencies": {
+    "@sbrow/bytenode-webpack-plugin": "0.2.0",
+    "bytenode": "1.1.1",
+    "shelljs": "0.8.3",
+    "webpack": "4.39.2"
+  },
+  "devDependencies": {
+    "electron": "5.0.6",
+    "nodemon": "1.18.4",
+    "webpack-cli": "^3.3.7"
+  },
+  "keywords": []
+}

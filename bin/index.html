@@ -1,0 +1,18 @@
+<script>
+  /**
+   * This script compiles the electron renderer code into v8 bytecode.
+   * It must be called from an electron renderer process in order to work.
+   */
+  const { compileFile } = require("bytenode");
+  const { remote } = require("electron");
+  const { unlinkSync } = require("fs");
+  const { dirname, join } = require("path");
+
+  function compile(source) {
+    compileFile(source, source.replace(/\.js$/, ".jsc"));
+    unlinkSync(source);
+  }
+
+  compile(join(dirname(__dirname), "app", "main.js"));
+  remote.getCurrentWindow().close();
+</script>
