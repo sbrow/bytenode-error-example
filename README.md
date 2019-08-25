@@ -2,7 +2,11 @@
 
 This repo illustrates an error that occurs when making calls to `Buffer` in an electron renderer process.
 
-# Step One
+# Usage
+
+Before starting, install node and clone the repo.
+
+## Step One
 
 ```bash
 $ yarn build && yarn start
