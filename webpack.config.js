@@ -1,6 +1,7 @@
 const { join } = require("path");
 
 const BytenodePlugin = require("@sbrow/bytenode-webpack-plugin").default;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
   {
@@ -15,6 +16,10 @@ module.exports = [
       __dirname: false,
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        templateContent: `<script src="index.js"></script>`,
+        inject: false,
+      }),
       new BytenodePlugin({ entries: { index: "main" }, external: true }),
     ],
   },
